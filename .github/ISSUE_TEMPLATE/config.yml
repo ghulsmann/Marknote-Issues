@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Marknote support email
+    url: mailto:support@marknote.co.uk
+    about: For general support questions, account issues, or anything not suited to a public bug/feature thread.
+  - name: Security disclosure
+    url: mailto:support@marknote.co.uk
+    about: Please report security issues privately by email; do not file a public issue.
+  - name: Marknote website
+    url: https://marknote.co.uk
+    about: Documentation, downloads, release notes, and store links.
