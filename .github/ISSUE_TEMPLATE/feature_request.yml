@@ -9,50 +9,16 @@ body:
         Thanks for the pitch. The strongest feature requests describe a concrete use case rather than a solution — that gives more room to find the right shape for it.
 
   - type: textarea
-    id: use-case
+    id: details
     attributes:
-      label: Use case
-      description: What are you trying to do in Marknote that's currently awkward or impossible?
-      placeholder: When I'm…, I want to…, but right now I have to…
+      label: Details
+      description: |
+        Use case, proposed behaviour, and why it matters are the most useful structure.
+      placeholder: |
+        Use case:
+
+        Proposed behaviour:
+
+        Why this matters:
     validations:
       required: true
-
-  - type: textarea
-    id: proposed
-    attributes:
-      label: Proposed behaviour
-      description: How would you like it to work? Mockups, screenshots from other apps, or rough sketches are very welcome.
-    validations:
-      required: true
-
-  - type: textarea
-    id: why
-    attributes:
-      label: Why this matters
-      description: How often does this come up? Who else does it affect? Are there workarounds today?
-    validations:
-      required: false
-
-  - type: dropdown
-    id: scope
-    attributes:
-      label: Scope
-      description: A rough sense of how big this feels to you.
-      options:
-        - Small tweak (a label, a default, a keyboard shortcut)
-        - Medium addition (new setting, new menu item, small panel)
-        - Large feature (new view, new dialog, new subsystem)
-        - Not sure
-    validations:
-      required: false
-
-  - type: textarea
-    id: diagnostics
-    attributes:
-      label: Environment (optional)
-      description: Only relevant if the feature interacts with a specific OS / .NET / vault layout.
-      value: |
-        - **Marknote**: v
-        - **OS**: Microsoft Windows
-    validations:
-      required: false

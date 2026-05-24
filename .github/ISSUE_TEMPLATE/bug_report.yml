@@ -6,67 +6,22 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to file a bug. The in-app "About → Report a bug" flow pre-fills this form with your diagnostics; if you're here directly, please paste your version and OS in the diagnostics block below.
+        Thanks for taking the time to file a bug. The in-app **About → Report a bug** flow pre-fills the box below with your description, diagnostics (version, OS, .NET runtime, settings path, active vault), and any recent crash log. Edit freely before posting.
 
   - type: textarea
-    id: steps
+    id: details
     attributes:
-      label: Steps to reproduce
-      description: What did you do, in order? Numbered steps work best.
-      placeholder: |
-        1. Open a folder with…
-        2. Click…
-        3. Type…
-    validations:
-      required: true
-
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected result
-      placeholder: I expected Marknote to…
-    validations:
-      required: true
-
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual result
-      description: Screenshots or short screen recordings are very welcome.
-      placeholder: Instead, Marknote…
-    validations:
-      required: true
-
-  - type: textarea
-    id: diagnostics
-    attributes:
-      label: Diagnostics
+      label: Details
       description: |
-        The in-app form auto-attaches this block. If filing manually, paste:
-        - Marknote version (About → version pill)
-        - Windows edition (e.g. Windows 11 Pro)
-        - .NET runtime version
-        - Crash log tail from `%LOCALAPPDATA%\Marknote\crash.log` if relevant
-      value: |
-        - **Marknote**: v
-        - **OS**: Microsoft Windows
-        - **.NET**:
-        - **Settings path**: `%LOCALAPPDATA%\Marknote\settings.json`
+        Steps to reproduce, expected result, and actual result are the most useful structure.
+        Diagnostics auto-attach when filed from the app — paste them manually if filing here.
+      placeholder: |
+        Steps:
+        1.
+        2.
 
-        <details><summary>Crash log (tail)</summary>
+        Expected:
 
-        ```
-        (paste here if relevant)
-        ```
-
-        </details>
+        Actual:
     validations:
-      required: false
-
-  - type: textarea
-    id: extra
-    attributes:
-      label: Anything else?
-      description: Workarounds you've tried, related issues, screenshots, etc.
-    validations:
-      required: false
+      required: true
