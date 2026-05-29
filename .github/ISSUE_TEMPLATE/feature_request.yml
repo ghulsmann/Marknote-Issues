@@ -1,24 +1,63 @@
 name: Feature request
 description: Pitch an improvement or a new feature for Marknote.
-title: "[Feature] "
+title: "[Feature]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for the pitch. The strongest feature requests describe a concrete use case rather than a solution — that gives more room to find the right shape for it.
+        Thanks for the pitch.
+
+        The strongest requests describe a concrete **use case** — the problem you're trying to solve — rather than jumping straight to a solution. That leaves room to find the best shape for it. Filing from **About → Request a feature** pre-fills the box below.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before filing
+      options:
+        - label: I searched [existing issues](https://github.com/ghulsmann/Marknote-Issues/issues?q=is%3Aissue) and didn't find the same request.
+          required: true
 
   - type: textarea
     id: details
     attributes:
-      label: Details
+      label: Your idea
       description: |
-        Use case, proposed behaviour, and why it matters are the most useful structure.
+        Use case, the behaviour you'd like, and why it matters are the most useful structure.
       placeholder: |
-        Use case:
+        Use case (the problem you're solving):
 
         Proposed behaviour:
 
         Why this matters:
     validations:
       required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of Marknote does this touch? Skip if it spans several or you're unsure.
+      options:
+        - "Not sure"
+        - "Editor (typing, formatting, shortcuts)"
+        - "Live preview / rendering (math, diagrams, code)"
+        - "Files & vault / folders"
+        - "Search"
+        - "Backlinks & wiki-links"
+        - "Tasks"
+        - "Git"
+        - "Widgets & taskbar (jump list / Windows 11 widget)"
+        - "Settings & appearance"
+        - "Plugins"
+        - "Other"
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or workarounds
+      description: How do you handle this today? Have you tried other apps or approaches? Mockups and links are welcome. Optional.
+    validations:
+      required: false

@@ -1,27 +1,78 @@
 name: Bug report
 description: Something in Marknote doesn't work as expected.
-title: "[Bug] "
+title: "[Bug]: "
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to file a bug. The in-app **About → Report a bug** flow pre-fills the box below with your description, diagnostics (version, OS, .NET runtime, settings path, active vault), and any recent crash log. Edit freely before posting.
+        Thanks for taking the time to file a bug.
+
+        Filing from inside Marknote (**About → Report a bug**) pre-fills the **What happened?** box with your description plus diagnostics (version, OS, .NET runtime, settings path, active vault) and any recent crash log — so most fields below are optional. If you're filing here directly, a few details help us reproduce it faster.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before filing
+      options:
+        - label: I searched [existing issues](https://github.com/ghulsmann/Marknote-Issues/issues?q=is%3Aissue) and didn't find a duplicate.
+          required: true
+        - label: I'm on the latest version of Marknote (Settings → About).
+          required: false
 
   - type: textarea
     id: details
     attributes:
-      label: Details
+      label: What happened?
       description: |
-        Steps to reproduce, expected result, and actual result are the most useful structure.
-        Diagnostics auto-attach when filed from the app — paste them manually if filing here.
+        What you did, what you expected, and what actually happened. Steps to reproduce are the single most useful thing you can give us.
+        Diagnostics auto-attach when filed from the app — paste them in if you're filing here.
       placeholder: |
-        Steps:
+        Steps to reproduce:
         1.
         2.
+        3.
 
         Expected:
 
         Actual:
     validations:
       required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Roughly where does this happen? Pick the closest — skip if unsure.
+      options:
+        - "Not sure"
+        - "Editor (typing, formatting, shortcuts)"
+        - "Live preview / rendering (math, diagrams, code)"
+        - "Files & vault / folders"
+        - "Search"
+        - "Backlinks & wiki-links"
+        - "Tasks"
+        - "Git"
+        - "Widgets & taskbar (jump list / Windows 11 widget)"
+        - "Settings & appearance"
+        - "Plugins"
+        - "Other"
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: Marknote version
+      description: Settings → About. Skip if it's already in the diagnostics above.
+      placeholder: "1.4.0.x"
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots, crash log, or anything else
+      description: Drag in screenshots or a screen recording, or paste a crash log (Report a bug → Copy crash log). Optional.
+    validations:
+      required: false
